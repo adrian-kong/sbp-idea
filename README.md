@@ -14,3 +14,5 @@ Unexplored ideas:
 - Too bad we create a new byte[] array everytime for driver (maybe not big performance? stack kept small?),
     - maybe use FFI for interop (?) have rust -> C / C++, call with JDK19 using Project Panama
     - just call rust sbp2json
+
+![after.png](images/after.png)
