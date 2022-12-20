@@ -7,17 +7,19 @@
 //import com.intellij.psi.FileViewProvider;
 //import com.intellij.psi.PsiElement;
 //import com.intellij.psi.PsiElementVisitor;
+//import com.intellij.psi.impl.PsiFileEx;
 //import com.intellij.psi.impl.PsiManagerImpl;
 //import com.intellij.psi.impl.file.PsiBinaryFileImpl;
+//import com.intellij.psi.impl.source.PsiFileWithStubSupport;
+//import com.intellij.psi.stubs.StubTree;
 //import dev.sbp.language.SbpLanguage;
 //import org.jetbrains.annotations.NonNls;
 //import org.jetbrains.annotations.NotNull;
 //import org.jetbrains.annotations.Nullable;
 //
 //import javax.swing.*;
-//
-////TODO
-//public class SbpFile extends PsiBinaryFileImpl {
+// TODO: editable sbp file
+//public class SbpFile extends PsiBinaryFileImpl implements PsiFileWithStubSupport, PsiFileEx {
 //    public SbpFile(@NotNull PsiManagerImpl manager, @NotNull FileViewProvider viewProvider) {
 //        super(manager, viewProvider);
 //        System.out.println(this);
@@ -70,4 +72,8 @@
 //        return "SbpFile:" + getName();
 //    }
 //
+//    @Override
+//    public @Nullable StubTree getStubTree() {
+//        return null;
+//    }
 //}
