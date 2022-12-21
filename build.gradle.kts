@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "dev"
-version = "1.0-SNAPSHOT"
+version = "1.0"
 
 repositories {
     mavenCentral()
@@ -13,6 +13,7 @@ repositories {
 dependencies {
     implementation("com.swiftnav:sbp:4.8.0")
     implementation("org.json:json:20220924")
+    implementation("org.jetbrains:marketplace-zip-signer:0.1.8")
 }
 
 // Configure Gradle IntelliJ Plugin
@@ -37,8 +38,10 @@ tasks {
     }
 
     signPlugin {
-        certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
-        privateKey.set(System.getenv("PRIVATE_KEY"))
+        val cc = System.getenv("CHAIN") as String
+        val pk = System.getenv("PRIVATE") as String
+        certificateChain.set(File(cc).readText())
+        privateKey.set(File(pk).readText())
         password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
     }
 
