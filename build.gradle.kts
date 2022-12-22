@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException
+
 plugins {
     id("java")
     id("org.jetbrains.intellij") version "1.8.0"
@@ -38,10 +40,14 @@ tasks {
     }
 
     signPlugin {
-        val cc = System.getenv("CHAIN") as String
-        val pk = System.getenv("PRIVATE") as String
-        certificateChain.set(File(cc).readText())
-        privateKey.set(File(pk).readText())
+        val cc = System.getenv("CHAIN") ?: ""
+        val pk = System.getenv("PRIVATE") ?: ""
+        try {
+            certificateChain.set(File(cc).readText())
+            privateKey.set(File(pk).readText())
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        }
         password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
     }
 
