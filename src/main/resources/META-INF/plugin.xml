@@ -14,7 +14,10 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    Swift Binary Protocol to analyze and edit SBP files
+    Swift Binary Protocol to analyze and edit SBP files<br>
+
+    This is utility is used to associate .sbp file formats using Swift Navigation's protocols in <a href="https://github.com/swift-nav/libsbp">libsbp</a><br>
+    Recognizes sbp format and decompiles to a more human-readable format
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.
