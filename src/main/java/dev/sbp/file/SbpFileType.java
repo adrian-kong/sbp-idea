@@ -1,17 +1,24 @@
 package dev.sbp.file;
 
+import com.intellij.lang.Language;
 import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.openapi.util.NlsContexts;
 import com.intellij.openapi.util.NlsSafe;
+import dev.sbp.language.SbpLanguage;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
-public class SbpFileType implements FileType {
+public class SbpFileType extends LanguageFileType {
 
     public static final SbpFileType INSTANCE = new SbpFileType();
+
+    protected SbpFileType() {
+        super(SbpLanguage.INSTANCE);
+    }
 
     @Override
     public @NonNls @NotNull String getName() {
@@ -32,10 +39,4 @@ public class SbpFileType implements FileType {
     public @Nullable Icon getIcon() {
         return null;
     }
-
-    @Override
-    public boolean isBinary() {
-        return true;
-    }
-
 }
