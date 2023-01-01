@@ -7,10 +7,9 @@ import com.intellij.psi.FileViewProviderFactory;
 import com.intellij.psi.PsiManager;
 import org.jetbrains.annotations.NotNull;
 
-public class SbpFileViewProviderFactory implements FileViewProviderFactory {
-
+public class BinaryFileViewProviderFactory implements FileViewProviderFactory {
     @Override
     public @NotNull FileViewProvider createFileViewProvider(@NotNull VirtualFile file, Language language, @NotNull PsiManager manager, boolean eventSystemEnabled) {
-        return new SbpSingleRootFileViewProvider(manager, file);
+        return new BinarySingleRootFileViewProvider(manager, file);
     }
 }

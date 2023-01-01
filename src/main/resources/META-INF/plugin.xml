@@ -33,11 +33,17 @@
                 fieldName="INSTANCE"
                 language="sbp"
                 extensions="sbp"/>
-        <fileType.fileViewProviderFactory
-                implementationClass="dev.sbp.provider.SbpFileViewProviderFactory" filetype="SBP"/>
-        <filetype.decompiler filetype="SBP" implementationClass="dev.sbp.decompiler.SbpDecompiler"/>
-        <!--        <lang.parserDefinition-->
-        <!--                language="sbp"-->
-        <!--                implementationClass="dev.sbp.parser.SbpParserDefinition"/>-->
+<!--        <fileType.fileViewProviderFactory-->
+<!--                implementationClass="dev.sbp.provider.BinaryFileViewProviderFactory" filetype="SBP"/>-->
+        <lang.parserDefinition
+                language="sbp"
+                implementationClass="dev.sbp.language.BinaryParserDefinition"/>
+        <virtualFileSystem implementationClass="dev.sbp.file.BinaryVirtualFileSystem" key="sbpbin" physical="false"/>
+        <lang.syntaxHighlighterFactory
+                language="sbp"
+                implementationClass="com.intellij.json.highlighting.JsonSyntaxHighlighterFactory"/>
+        <colorSettingsPage
+                implementation="com.intellij.json.highlighting.JsonColorsPage"/>
+
     </extensions>
 </idea-plugin>

@@ -9,8 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
-public class SbpDecompiler implements BinaryFileDecompiler {
-    @Override
+public class SbpDecompiler {
+
     public @NotNull CharSequence decompile(@NotNull VirtualFile file) {
         try {
             byte[] content = file.contentsToByteArray();
