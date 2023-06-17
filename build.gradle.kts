@@ -46,7 +46,8 @@ tasks {
             certificateChain.set(File(cc).readText())
             privateKey.set(File(pk).readText())
         } catch (e: FileNotFoundException) {
-            e.printStackTrace()
+            println("signing certs not found")
+//            e.printStackTrace()
         }
         password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
     }
